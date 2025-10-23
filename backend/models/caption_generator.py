@@ -3,7 +3,7 @@ import torch
 import config
 from .model_loader import ModelLoader
 
-PROMPT = 'You are a social media manager. Generate a social media caption based on the image. Make it engaging. Just return one caption.'
+PROMPT = 'You are a social media manager. Generate a social media caption based on the image. Make it witty and not cringey. Just return one caption.'
 
 class CaptionGenerator:
     """Modular interface for generating image captions"""
@@ -82,4 +82,4 @@ class CaptionGenerator:
             # Fallback to BLIP
             self.use_gemini = False
             self.model_loader = ModelLoader()
-            return self._generate_with_blip(image, 50)
+            return self._generate_with_blip(image, 120)
