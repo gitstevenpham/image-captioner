@@ -79,9 +79,9 @@ const Home = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-gray-50 to-blue-50">
+    <div className="flex flex-col min-h-screen bg-gradient-to-br from-gray-50 to-blue-50">
       {/* Header */}
-      <header className="bg-white shadow-sm">
+      <header className="flex-none bg-white shadow-sm">
         <div className="max-w-7xl mx-auto px-4 py-6">
           <div className="flex justify-between items-center">
             <div>
@@ -104,7 +104,7 @@ const Home = () => {
       </header>
 
       {/* Main Content */}
-      <main className="max-w-7xl mx-auto px-4 py-12">
+      <main className="flex-1 max-w-7xl mx-auto px-4 py-12">
         <div className="max-w-4xl mx-auto">
           {/* Image Upload */}
           <ImageUpload
@@ -205,7 +205,7 @@ const Home = () => {
       </main>
 
       {/* Footer */}
-      <footer className="bg-white border-t border-gray-200 mt-12">
+      <footer className="flex-none bg-white border-t border-gray-200 mt-12">
         <div className="max-w-7xl mx-auto px-4 py-6 text-center text-gray-600 text-sm">
           <p>
             Powered by AI vision models (BLIP & Gemini)
