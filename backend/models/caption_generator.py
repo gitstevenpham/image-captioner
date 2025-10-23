@@ -3,6 +3,8 @@ import torch
 import config
 from .model_loader import ModelLoader
 
+PROMPT = 'You are a social media manager. Generate a social media caption based on the image. Make it engaging. Just return one caption.'
+
 class CaptionGenerator:
     """Modular interface for generating image captions"""
 
@@ -18,7 +20,7 @@ class CaptionGenerator:
         try:
             import google.generativeai as genai
             genai.configure(api_key=config.GEMINI_API_KEY)
-            self.gemini_model = genai.GenerativeModel('gemini-pro-vision')
+            self.gemini_model = genai.GenerativeModel('gemini-2.5-flash')
         except Exception as e:
             print(f"Failed to initialize Gemini: {e}")
             print("Falling back to BLIP model")
@@ -70,7 +72,7 @@ class CaptionGenerator:
         """Generate caption using Gemini Vision API"""
         try:
             response = self.gemini_model.generate_content([
-                "Describe this image in a single, concise sentence.",
+                PROMPT,
                 image
             ])
             return response.text.strip()
