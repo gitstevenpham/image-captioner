@@ -1,4 +1,6 @@
 import React, { useState, useRef } from 'react';
+import { ReactComponent as UploadCloudIcon } from './icons/upload-cloud.svg';
+import { ReactComponent as CloseIcon } from './icons/close.svg';
 
 const ImageUpload = ({ onImageSelect, disabled = false }) => {
   const [dragActive, setDragActive] = useState(false);
@@ -98,19 +100,7 @@ const ImageUpload = ({ onImageSelect, disabled = false }) => {
 
           <div className="space-y-4">
             <div className="flex justify-center">
-              <svg
-                className="w-16 h-16 text-gray-400"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12"
-                />
-              </svg>
+              <UploadCloudIcon className="w-16 h-16 text-gray-400" />
             </div>
 
             <div>
@@ -138,19 +128,7 @@ const ImageUpload = ({ onImageSelect, disabled = false }) => {
               className="absolute top-4 right-4 bg-red-500 hover:bg-red-600 text-white rounded-full p-2 shadow-lg transition-colors"
               title="Remove image"
             >
-              <svg
-                className="w-5 h-5"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M6 18L18 6M6 6l12 12"
-                />
-              </svg>
+              <CloseIcon className="w-5 h-5" />
             </button>
           )}
         </div>
