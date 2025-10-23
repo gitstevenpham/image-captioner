@@ -5,6 +5,12 @@ import CaptionDisplay from '../components/CaptionDisplay';
 import RatingComponent from '../components/RatingComponent';
 import LoadingSpinner from '../components/LoadingSpinner';
 import { generateCaption, submitRating } from '../services/api';
+import { ReactComponent as ClockIcon } from '../components/icons/clock.svg';
+import { ReactComponent as ErrorCircleIcon } from '../components/icons/error-circle.svg';
+import { ReactComponent as RefreshIcon } from '../components/icons/refresh.svg';
+import { ReactComponent as UploadCloudIcon } from '../components/icons/upload-cloud.svg';
+import { ReactComponent as LightningIcon } from '../components/icons/lightning.svg';
+import { ReactComponent as StarRatingIcon } from '../components/icons/star-rating.svg';
 
 const Home = () => {
   const [selectedImage, setSelectedImage] = useState(null);
@@ -87,19 +93,7 @@ const Home = () => {
               to="/history"
               className="inline-flex items-center px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white font-medium rounded-lg transition-colors shadow-sm"
             >
-              <svg
-                className="w-5 h-5 mr-2"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"
-                />
-              </svg>
+              <ClockIcon className="w-5 h-5 mr-2" />
               View History
             </Link>
           </div>
@@ -122,19 +116,7 @@ const Home = () => {
           {error && !loading && (
             <div className="mt-8 bg-red-50 border border-red-200 rounded-lg p-6 animate-fade-in">
               <div className="flex items-start space-x-3">
-                <svg
-                  className="w-6 h-6 text-red-600 flex-shrink-0 mt-0.5"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
-                  />
-                </svg>
+                <ErrorCircleIcon className="w-6 h-6 text-red-600 flex-shrink-0 mt-0.5" />
                 <div>
                   <h3 className="text-lg font-semibold text-red-800">
                     Error
@@ -168,19 +150,7 @@ const Home = () => {
                   onClick={handleReset}
                   className="inline-flex items-center px-6 py-3 bg-gray-600 hover:bg-gray-700 text-white font-medium rounded-lg transition-colors shadow-sm"
                 >
-                  <svg
-                    className="w-5 h-5 mr-2"
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={2}
-                      d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"
-                    />
-                  </svg>
+                  <RefreshIcon className="w-5 h-5 mr-2" />
                   Generate Another Caption
                 </button>
               </div>
@@ -192,19 +162,7 @@ const Home = () => {
             <div className="mt-12 grid md:grid-cols-3 gap-6">
               <div className="bg-white rounded-lg p-6 shadow-sm">
                 <div className="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mb-4">
-                  <svg
-                    className="w-6 h-6 text-blue-600"
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={2}
-                      d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12"
-                    />
-                  </svg>
+                  <UploadCloudIcon className="w-6 h-6 text-blue-600" />
                 </div>
                 <h3 className="font-semibold text-gray-900 mb-2">
                   Upload Image
@@ -216,19 +174,7 @@ const Home = () => {
 
               <div className="bg-white rounded-lg p-6 shadow-sm">
                 <div className="w-12 h-12 bg-green-100 rounded-lg flex items-center justify-center mb-4">
-                  <svg
-                    className="w-6 h-6 text-green-600"
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={2}
-                      d="M13 10V3L4 14h7v7l9-11h-7z"
-                    />
-                  </svg>
+                  <LightningIcon className="w-6 h-6 text-green-600" />
                 </div>
                 <h3 className="font-semibold text-gray-900 mb-2">
                   AI Processing
@@ -240,19 +186,7 @@ const Home = () => {
 
               <div className="bg-white rounded-lg p-6 shadow-sm">
                 <div className="w-12 h-12 bg-purple-100 rounded-lg flex items-center justify-center mb-4">
-                  <svg
-                    className="w-6 h-6 text-purple-600"
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={2}
-                      d="M11.049 2.927c.3-.921 1.603-.921 1.902 0l1.519 4.674a1 1 0 00.95.69h4.915c.969 0 1.371 1.24.588 1.81l-3.976 2.888a1 1 0 00-.363 1.118l1.518 4.674c.3.922-.755 1.688-1.538 1.118l-3.976-2.888a1 1 0 00-1.176 0l-3.976 2.888c-.783.57-1.838-.197-1.538-1.118l1.518-4.674a1 1 0 00-.363-1.118l-3.976-2.888c-.784-.57-.38-1.81.588-1.81h4.914a1 1 0 00.951-.69l1.519-4.674z"
-                    />
-                  </svg>
+                  <StarRatingIcon className="w-6 h-6 text-purple-600" />
                 </div>
                 <h3 className="font-semibold text-gray-900 mb-2">
                   Rate & Improve
