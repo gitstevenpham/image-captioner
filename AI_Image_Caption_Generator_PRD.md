@@ -59,7 +59,7 @@ Create a simple but powerful web app that:
 
 ### ⚙️ System Architecture
 **Frontend:** React + Tailwind CSS  
-**Backend:** Flask or FastAPI  
+**Backend:** Flask  
 **Model Integration:**  
 - **Primary:** Hugging Face pre-trained model (e.g., `Salesforce/blip-image-captioning-base`)  
 - **Alternative:** Google Gemini API for multimodal inference  
@@ -135,13 +135,13 @@ Create a simple but powerful web app that:
 
 ## 9. Timeline (MVP)
 
-| Phase | Deliverables | Duration |
-|-------|---------------|-----------|
+| Phase | Deliverables                                             | Duration |
+|-------|----------------------------------------------------------|-----------|
 | Week 1 | Project setup, model integration (BLIP via Hugging Face) | 1 week |
-| Week 2 | Build Flask/FastAPI endpoints + image upload logic | 1 week |
-| Week 3 | React frontend (upload + display + rating) | 1 week |
-| Week 4 | Connect feedback loop + deploy on Render/Vercel | 1 week |
-| Week 5 | Bonus: personalized fine-tuning & polish | 1 week |
+| Week 2 | Build Flask endpoints + image upload logic               | 1 week |
+| Week 3 | React frontend (upload + display + rating)               | 1 week |
+| Week 4 | Connect feedback loop + deploy on Render/Vercel          | 1 week |
+| Week 5 | Bonus: personalized fine-tuning & polish                 | 1 week |
 
 ---
 
