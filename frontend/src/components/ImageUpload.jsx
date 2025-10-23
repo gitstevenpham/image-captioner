@@ -1,8 +1,8 @@
-import React, { useState, useRef } from 'react';
+import React, { useState, useRef, forwardRef, useImperativeHandle } from 'react';
 import { ReactComponent as UploadCloudIcon } from './icons/upload-cloud.svg';
 import { ReactComponent as CloseIcon } from './icons/close.svg';
 
-const ImageUpload = ({ onImageSelect, disabled = false }) => {
+const ImageUpload = forwardRef(({ onImageSelect, disabled = false }, ref) => {
   const [dragActive, setDragActive] = useState(false);
   const [preview, setPreview] = useState(null);
   const fileInputRef = useRef(null);
@@ -74,6 +74,11 @@ const ImageUpload = ({ onImageSelect, disabled = false }) => {
     onImageSelect(null);
   };
 
+  // Expose handleClear to parent component via ref
+  useImperativeHandle(ref, () => ({
+    clear: handleClear
+  }));
+
   return (
     <div className="w-full max-w-2xl mx-auto">
       {!preview ? (
@@ -135,6 +140,6 @@ const ImageUpload = ({ onImageSelect, disabled = false }) => {
       )}
     </div>
   );
-};
+});
 
 export default ImageUpload;

@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
 import { Link } from 'react-router-dom';
 import ImageUpload from '../components/ImageUpload';
 import CaptionDisplay from '../components/CaptionDisplay';
@@ -17,6 +17,7 @@ const Home = () => {
   const [loading, setLoading] = useState(false);
   const [captionData, setCaptionData] = useState(null);
   const [error, setError] = useState(null);
+  const imageUploadRef = useRef(null);
 
   const handleImageSelect = async (file) => {
     setSelectedImage(file);
@@ -73,6 +74,8 @@ const Home = () => {
     setSelectedImage(null);
     setCaptionData(null);
     setError(null);
+    // Clear the image upload component
+    imageUploadRef.current?.clear();
   };
 
   return (
@@ -105,6 +108,7 @@ const Home = () => {
         <div className="max-w-4xl mx-auto">
           {/* Image Upload */}
           <ImageUpload
+            ref={imageUploadRef}
             onImageSelect={handleImageSelect}
             disabled={loading}
           />
