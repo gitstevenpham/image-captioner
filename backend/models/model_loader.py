@@ -1,6 +1,10 @@
 from transformers import BlipProcessor, BlipForConditionalGeneration
 import torch
 import config
+import warnings
+
+# Suppress the resume_download deprecation warning from huggingface_hub
+warnings.filterwarnings("ignore", category=FutureWarning, module="huggingface_hub.file_download")
 
 class ModelLoader:
     """Lazy loading singleton for ML models"""
