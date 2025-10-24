@@ -20,10 +20,12 @@ def create_app():
     from routes.caption import caption_bp
     from routes.rating import rating_bp
     from routes.history import history_bp
+    from routes.models import models_bp
 
     app.register_blueprint(caption_bp, url_prefix='/api')
     app.register_blueprint(rating_bp, url_prefix='/api')
     app.register_blueprint(history_bp, url_prefix='/api')
+    app.register_blueprint(models_bp, url_prefix='/api')
 
     @app.route('/health')
     def health():
