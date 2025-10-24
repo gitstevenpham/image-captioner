@@ -4,6 +4,7 @@ import ImageUpload from '../components/ImageUpload';
 import CaptionDisplay from '../components/CaptionDisplay';
 import RatingComponent from '../components/RatingComponent';
 import LoadingSpinner from '../components/LoadingSpinner';
+import ModelSelector from '../components/ModelSelector';
 import { generateCaption, submitRating } from '../services/api';
 import { ReactComponent as ClockIcon } from '../components/icons/clock.svg';
 import { ReactComponent as ErrorCircleIcon } from '../components/icons/error-circle.svg';
@@ -104,8 +105,11 @@ const Home = () => {
       </header>
 
       {/* Main Content */}
-      <main className="flex-1 max-w-7xl mx-auto px-4 py-12">
+      <main className="flex-1 max-w-7xl mx-auto px-4 py-6">
         <div className="max-w-4xl mx-auto">
+          {/* Model Selector */}
+          <ModelSelector />
+
           {/* Image Upload */}
           <ImageUpload
             ref={imageUploadRef}

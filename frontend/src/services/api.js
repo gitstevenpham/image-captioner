@@ -85,6 +85,20 @@ export const getImageRatings = async (imageId) => {
 };
 
 /**
+ * Get available models and current model
+ * @returns {Promise} Response with models data
+ */
+export const getAvailableModels = async () => {
+  try {
+    const response = await api.get('/api/models');
+    return response.data;
+  } catch (error) {
+    console.error('Error fetching models:', error);
+    throw error;
+  }
+};
+
+/**
  * Health check endpoint
  * @returns {Promise} Response with health status
  */

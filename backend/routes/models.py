@@ -14,9 +14,9 @@ def get_available_models():
     available_models = [
         {
             'id': 'blip',
-            'name': 'BLIP',
+            'name': 'Salesforce BLIP Image Captioning',
             'full_name': 'Salesforce/blip-image-captioning-base',
-            'description': 'Bootstrapping Language-Image Pre-training model for image captioning. Very dry and not too creative. Initial image load takes a while to generate a caption.',
+            'description': 'Model card for image captioning pretrained on COCO dataset - base architecture (with ViT large backbone). Very dry and not too creative. Initial image load takes a while to generate a caption.',
             'provider': 'Hugging Face',
             'type': 'local'
         },
