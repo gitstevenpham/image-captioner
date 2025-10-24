@@ -59,11 +59,13 @@ const RatingComponent = ({ onRate, disabled = false }) => {
               </button>
             ))}
           </div>
-          <div className="mt-4 text-center text-sm text-gray-500">
-            {hoveredStar > 0 && !selectedRating && (
+          <div className="mt-4 text-center text-sm text-gray-500 h-5">
+            {hoveredStar > 0 && !selectedRating ? (
               <span>
                 {hoveredStar} star{hoveredStar > 1 ? 's' : ''}
               </span>
+            ) : (
+              <span className="invisible">placeholder</span>
             )}
           </div>
         </div>
